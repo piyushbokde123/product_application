@@ -1,0 +1,55 @@
+
+<div lass="container-fluid">
+<div class="mx-auto" style="width: 30rem;">
+  <%= form_with(model: product, local: true) do |form| %>
+    <% if product.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+        <ul>
+        <% product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control", required: true %>
+      <div class="invalid-feedback">
+        Please provide a name.
+      </div>
+    </div>
+
+     <div class="form-group">
+      <%= form.label :price, class: "form-label" %>
+      <%= form.text_field :price, class: "form-control", required: true %>
+      <div class="invalid-feedback">
+        Please provide a price.
+      </div>
+    </div>
+
+     <div class="form-group">
+      <%= form.label :company, class: "form-label" %>
+      <%= form.text_field :company, class: "form-control", required: true %>
+      <div class="invalid-feedback">
+        Please provide a company.
+      </div>
+    </div>
+
+     <div class="form-group">
+      <%= form.label :quantity, class: "form-label" %>
+      <%= form.text_field :quantity, class: "form-control", required: true %>
+      <div class="invalid-feedback">
+        Please provide a quantity.
+      </div>
+    </div></br>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
+</div>
+
