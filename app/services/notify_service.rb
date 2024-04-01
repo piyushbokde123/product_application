@@ -1,3 +1,5 @@
+require 'httparty'
+
 class NotifyService < ApplicationService
 
   attr_reader :name, :action
